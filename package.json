@@ -1,0 +1,43 @@
+{
+  "name": "vigia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --experimental-sqlite server/index.js",
+    "build": "vite build",
+    "start": "node --experimental-sqlite server/index.js --production",
+    "test": "node --experimental-sqlite --test tests/*.test.js",
+    "check": "node scripts/check.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^4.0.0",
+    "ipaddr.js": "^2.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10",
+    "vite": "^6.4.1"
+  },
+  "description": "Self-hosted uptime monitoring, response times and public incident status pages.",
+  "license": "MIT",
+  "author": "Miguel Moscoso",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MIGUEL-MOSCOSO-DEV/vigia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MIGUEL-MOSCOSO-DEV/vigia/issues"
+  },
+  "keywords": []
+}

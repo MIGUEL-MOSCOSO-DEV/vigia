@@ -1,0 +1,414 @@
+@import './base.css';
+:root {
+  --bg: #0d1519;
+  --panel: #111d22;
+  --ink: #d4e2df;
+  --muted: #6e8589;
+  --accent: #79edb1;
+  --accent-ink: #10251c;
+  --line: #25363b;
+  --soft: #16272b;
+  --radius: 3px;
+  --font: 'Cascadia Code', Consolas, monospace;
+}
+.console-head {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  border-bottom: 1px solid var(--line);
+  padding: 0 40px;
+}
+.console-head > .identity {
+  margin-left: auto;
+}
+.brand {
+  letter-spacing: -1px;
+}
+.system-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #66867a;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.system-label i {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  box-shadow: 0 0 10px #79edb166;
+}
+.console-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom: 1px solid var(--line);
+  background: #0e191d;
+}
+.text-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 0;
+  color: var(--accent);
+  font-size: 10px;
+  text-decoration: none;
+}
+.console main {
+  padding: 45px 40px;
+  max-width: 1600px;
+  margin: auto;
+}
+.console-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+.console-title h1 {
+  font-family: Arial, sans-serif;
+  font-size: 44px;
+  letter-spacing: -1.6px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+.console-title p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.readouts {
+  display: flex;
+  gap: 45px;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.readouts > span {
+  font-size: 9px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.readouts b {
+  font-size: 20px;
+  color: #b7cfca;
+  font-weight: 400;
+}
+.readouts .up b {
+  color: #79edb1;
+}
+.readouts .down b {
+  color: #db877d;
+}
+.monitor-table {
+  border: 1px solid var(--line);
+  background: #101a1f;
+}
+.monitor-table th {
+  padding: 18px;
+  color: #789492;
+  font-size: 8px;
+}
+.monitor-table td {
+  padding: 24px 18px;
+}
+.monitor-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  background: transparent;
+  color: #b8cec7;
+  font-size: 12px;
+}
+.monitor-table td small {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 9px;
+}
+.numeric {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.monitor-state {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  white-space: nowrap;
+  color: #81938c;
+}
+.monitor-state i {
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 50%;
+}
+.monitor-state.up {
+  color: #79d5a3;
+}
+.monitor-state.down {
+  color: #d88479;
+}
+.monitor-state.paused {
+  color: #a39772;
+}
+.signal-trail {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  min-width: 120px;
+  max-width: 225px;
+  overflow: hidden;
+}
+.signal-trail > i {
+  width: 4px;
+  height: 22px;
+  background: #254b3d;
+  flex-shrink: 0;
+}
+.signal-trail > i.ok {
+  background: #4c9e77;
+}
+.signal-trail > i.fail {
+  background: #b66e65;
+}
+.signal-trail > span {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #475d61;
+}
+.monitor-table > footer {
+  padding: 17px 20px;
+  font-size: 8px;
+  color: #60787b;
+  border-top: 1px solid var(--line);
+  line-height: 1.7;
+}
+.console-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 8px;
+  color: #4b6367;
+  margin-top: 40px;
+}
+.incident-log > article {
+  display: flex;
+  gap: 24px;
+  padding: 30px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.log-node {
+  height: 9px;
+  width: 9px;
+  margin-top: 6px;
+  background: #c39565;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 5px #c3956510;
+}
+.log-node.resolved {
+  background: #79ad85;
+}
+.incident-log h2 {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  margin-top: 18px;
+}
+.incident-log p {
+  font-size: 11px;
+  color: #7c9797;
+  margin: 15px 0 20px;
+  white-space: pre-line;
+}
+.incident-log time {
+  font-size: 9px;
+  color: #5c7777;
+}
+.wait {
+  padding: 80px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.auth.vigia {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  margin: auto;
+  padding: 40px 25px;
+}
+.vigia .auth-story {
+  background: transparent;
+  padding: 0;
+  min-height: 0;
+}
+.vigia .auth-story > h1 {
+  font-size: 34px;
+  max-width: 600px;
+  letter-spacing: -1px;
+}
+.vigia .auth-index {
+  margin-top: 25px;
+  padding: 0;
+}
+.vigia .auth-story > p,
+.vigia .auth-story > footer,
+.vigia .auth-art {
+  display: none;
+}
+.vigia .auth-entry {
+  margin: 35px 0 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.vigia .auth-entry > .eyebrow {
+  display: none;
+}
+.vigia .auth-entry > h2 {
+  font-size: 17px;
+  margin-top: 0;
+}
+.vigia .auth-entry form {
+  max-width: 450px;
+}
+.vigia .auth-switch {
+  text-align: left;
+}
+.public-status {
+  max-width: 850px;
+  margin: auto;
+  padding: 50px 25px;
+}
+.public-status > .brand {
+  margin-bottom: 65px;
+}
+.public-status > .eyebrow {
+  display: block;
+  font-size: 9px;
+}
+.public-status h1 {
+  font-family: Arial, sans-serif;
+  font-size: 43px;
+  font-weight: 500;
+  margin: 18px 0 30px;
+  overflow-wrap: anywhere;
+}
+.status-headline {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 27px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+.status-headline i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #79edb1;
+}
+.status-headline i.down {
+  background: #d88479;
+}
+.public-monitor {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  padding: 22px 15px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.public-status > h2 {
+  font-size: 15px;
+  margin: 45px 0 25px;
+  font-weight: 500;
+}
+.public-incident {
+  border-left: 1px solid var(--line);
+  padding: 0 0 30px 24px;
+}
+.public-incident h3 {
+  font-size: 15px;
+  margin-top: 18px;
+}
+.public-incident p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 15px 0;
+  white-space: pre-line;
+}
+.public-incident time {
+  font-size: 9px;
+  color: var(--muted);
+}
+@media (max-width: 700px) {
+  .console-head {
+    padding: 0 20px;
+    gap: 20px;
+    height: 70px;
+  }
+  .system-label {
+    display: none;
+  }
+  .console-nav {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .console main {
+    padding: 30px 18px;
+  }
+  .console-title {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .console-title h1 {
+    font-size: 34px;
+  }
+  .console-title .eyebrow {
+    font-size: 8px;
+  }
+  .readouts {
+    gap: 25px;
+  }
+  .readouts > span {
+    gap: 12px;
+    font-size: 8px;
+  }
+  .console-bottom {
+    font-size: 7px;
+    flex-wrap: wrap;
+  }
+  .incident-log .row {
+    flex-wrap: wrap;
+  }
+  .public-status {
+    padding-top: 30px;
+  }
+  .public-monitor {
+    flex-wrap: wrap;
+  }
+  .public-monitor > span:first-child {
+    width: 100%;
+  }
+  .public-status h1 {
+    font-size: 34px;
+  }
+}
